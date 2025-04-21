@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مهرجان الورد الطائفي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <div class="logo">
+        <img src="logo.png" alt="شعار مهرجان الورد الطائفي">
+      </div>
+      </header>
+    <div id="popup">
+        <div class="popup-content">
+            <h2>مرحباً بك في منصة مهرجان الورد الطائفي!</h2>
+            <p>نتمنى لك وقتاً جميلاً ومليئاً بالورود.</p>
+            <button onclick="closePopup()">ابدأ التصفح</button>
+        </div>
+    </div>
+<header>
+    مهرجان الورد الطائفي
+</header>
+<nav>
+    <a href="#about">نبذة</a>
+    <a href="#photos">صور</a>
+    <a href="#video">فيديو</a>
+    <a href="#contact">تواصل معنا</a>
+    <a href="#supervision">الإشراف</a>
+  </nav>
+<section id="about">
+    <h2>عبير الورد يفوح بالجمال</h2>
+    <p>الورد هو لغة الحب والجمال، يحمل لنا أروع المشاعر وينعش الأرواح.</p>
+
+    <h2>عطر الطبيعة بين أيدينا</h2>
+    <p>زهور الورد تحكي قصص الفصول وتجلب السعادة لكل مكان تذهب إليه.</p>
+</section>
+
+<section id="about">
+    <h2>أنواع الورد</h2>
+    <p>يوجد آلاف الأنواع من الورد في العالم، تختلف في الألوان والعطور والشكل.</p>
+
+    <h2>فوائد الورد</h2>
+    <p>يستخدم الورد في صناعة العطور، وتحضير مستحضرات التجميل، وله فوائد طبية مذهلة.</p>
+
+    <h2>مهرجان الورد الطائفي</h2>
+    <p>مهرجان سنوي يحتفل فيه الجميع بجمال الورد وروعة الطبيعة في الطائف.</p>
+
+    <h2>رمزية الورد</h2>
+    <p>يرمز الورد إلى الحب، الأمل، الفرح، السلام، والعديد من المعاني النبيلة حول العالم.</p>
+</section>
+<section class="images" id="photos">
+    <div class="image-card">
+        <img src="flower1.jpg" alt="ورد طائفي">
+        <p>ورد الطائف يتميز برائحته الزكية وقوته في صناعة العطور.</p>
+    </div>
+
+    <div class="image-card">
+        <img src="flower2.jpg" alt="ورد طائفي آخر">
+        <p>تشتهر مزارع الطائف بإنتاج أجود أنواع الورود الطبيعية عالمياً.</p>
+    </div>
+</section>
+
+
+<section class="video" id="video">
+    <h2>الورد الطائفي - كنز الطبيعة وروح الطائف</h2>
+    <p>يُعد الورد الطائفي من أجود أنواع الورود في العالم، ويتميز برائحته الزكية وطريقته التقليدية في التقطير.  
+    في هذا المقطع، نشاهد كيف تتحول أزهار الورد إلى عبير فاخر يأسر القلوب، حيث تتجلى عراقة الطائف وروعتها في كل وردة.</p>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/cktaMsMRXy0" title="الورد الطائفي من أجود أنواع الورود وأغلاها في العالم" frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>
+<section id="contact">
+    <h2>تواصل معنا</h2>
+    <form id="contact-form">
+        <input type="text" name="name" placeholder="الاسم الكامل" required>
+        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+        <textarea name="message" placeholder="اكتب رسالتك هنا" required></textarea>
+        <button type="submit">إرسال</button>
+    </form>
+</section>
+<div class="supervision" id="supervision">
+    <p>بإشراف المعلمة: أ.رحمه العصيمي
+    <p>إعداد الطالبات:</p>
+    <ul>
+    <li>جود العمري </li>
+        <li>ميلاف العلياني</li>
+      <li>رولا البقمي</li>
+    </ul>
+  </div>
+<footer>
+    جميع الحقوق محفوظة © 2025 مهرجان الورد الطائفي
+</footer>
+<script>
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+</script>
+<script>
+    const form = document.getElementById('contact-form');
+    
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('تم إرسال رسالتك بنجاح! سنرد عليك قريباً.');
+        form.reset();
+    });
+    </script>
+    <script>
+        const sections = document.querySelectorAll("section");
+        const media = document.querySelectorAll(".photo, video");
+      
+        function revealElements() {
+          sections.forEach(sec => {
+            const top = sec.getBoundingClientRect().top;
+            if (top < window.innerHeight - 100) {
+              sec.classList.add("show");
+            }
+          });
+      
+          media.forEach(el => {
+            const top = el.getBoundingClientRect().top;
+            if (top < window.innerHeight - 100) {
+              el.classList.add("show");
+            }
+          });
+        }
+      
+        window.addEventListener("scroll", revealElements);
+        window.addEventListener("load", revealElements);
+      </script>
+</body>
+</html>
